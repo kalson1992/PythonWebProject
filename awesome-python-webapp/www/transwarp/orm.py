@@ -87,7 +87,7 @@ def _gen_sql(table_name,mappings):
     sql=['--generating Sql for %s:'%table_name,'create table `%s` ('%table_name]
     for f  in sorted(mappings.values(),lambda x,y:cmp(x._order,y._order)):
         if not  hasattr(f,'dd1'):
-            raise  StandardError('no dd1 in field "%s".'%n)
+            raise  StandardError('no dd1 in field "%s".'%table_name)
         dd1=f.dd1
         nullable=f.nullable
         if f.primary_key:
